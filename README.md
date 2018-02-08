@@ -96,3 +96,12 @@ The OpenWhisk function we've created and configured can now be triggered with a 
   "images_processed": 1
 }
 ```
+
+### Invoking with Postman
+
+1) Open Postman and paste the following URL into the request URL input box (Follow the cURL command instructions to find where the values can be found)
+    `<OPENWHISK_WEB_ACTION_URL>?apiKey=<VISUAL_RECOGNITION_KEY>&userSecret=<USER_SECRET_PARAMETER>`
+2) Change the HTTP verb to `POST` in the dropdown next to the URL input field.
+3) Click the "Headers" tab below the URL input field and add a `Content-Type` header with the value `application/octet-stream`
+4) Click the "Body" tab and select the `binary` radio option. A file input selector will appear. Click it and select the image you wish to detect faces in.
+5) Click send!
