@@ -1,0 +1,35 @@
+{
+  "name": "openwhisk-face-detection",
+  "version": "0.0.1",
+  "description": "Image goes in, faces come out",
+  "main": "index.js",
+  "scripts": {
+    "package": "zip -r action.zip * -x \".env\" -x \".git\" -x \"test/*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanmtracey/OpenWhisk-Face-Detection.git"
+  },
+  "keywords": [
+    "Face",
+    "Detection",
+    "Serverless",
+    "OpenWhisk",
+    "Visual",
+    "Recognition",
+    "Watson",
+    "IBM"
+  ],
+  "author": "Sean M. Tracey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanmtracey/OpenWhisk-Face-Detection/issues"
+  },
+  "homepage": "https://github.com/seanmtracey/OpenWhisk-Face-Detection#readme",
+  "dependencies": {
+    "watson-developer-cloud": "^3.0.5"
+  },
+  "engines": {
+    "node": "8.9.3"
+  }
+}
