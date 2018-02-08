@@ -35,6 +35,8 @@ function main(args) {
 
 		} else {
 
+			const imageFormat = args.parsedQueryString.format || 'jpeg';
+
 			const visual_recognition = watson.visual_recognition({
 				api_key: args.parsedQueryString.apiKey,
 				version: 'v3',
@@ -45,10 +47,10 @@ function main(args) {
 				images_file: {
 					value: Buffer.from(args['__ow_body'], 'base64'),
 					 options: {
-						filename: 'image.jpg'
+						filename: `image.${imageFormat}`
 					 }
 				},
-				images_file_content_type : 'image/jpeg'
+				images_file_content_type : `image/${imageFormat}`
 			};
 	
 			visual_recognition.detectFaces(params, function(err, results) {
