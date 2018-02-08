@@ -37,6 +37,13 @@ function main(args) {
 
 			const imageFormat = args.parsedQueryString.format || 'jpeg';
 
+			if(imageFormat !== 'jpeg' && imageFormat !== 'png'){
+				reject({
+					status : 'err',
+					message : `Invalid file format passed. 'jpeg' and 'png' are the only valid values. Omit the 'format' query parameter to default the value to 'jpeg'.`
+				});
+			}
+
 			const visual_recognition = watson.visual_recognition({
 				api_key: args.parsedQueryString.apiKey,
 				version: 'v3',
